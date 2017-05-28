@@ -1,14 +1,14 @@
-var SerialPort = require('serialport');
-// var port = new SerialPort('/dev/ttyS0', {
-//     autoOpen: false,
-//     baudRate: 57600,
-//     parser: SerialPort.parsers.readline('\n')
-// });
-var port = new SerialPort('COM5', {
+var SerialPort = require('serialport').SerialPort;
+var port = new SerialPort('/dev/ttyS0', {
     autoOpen: false,
     baudRate: 57600,
     parser: SerialPort.parsers.readline('\n')
 });
+// var port = new SerialPort('COM5', {
+//     autoOpen: false,
+//     baudRate: 57600,
+//     parser: SerialPort.parsers.readline('\n')
+// });
 var serialport = {};
 
 serialport.isOpen = function () {
