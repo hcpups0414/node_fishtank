@@ -1,9 +1,12 @@
-var SerialPort = require('serialport').SerialPort;
+var serialport = require('serialport');
+var SerialPort = serialport.SerialPort;
+
 var port = new SerialPort('/dev/ttyS0', {
     autoOpen: false,
     baudRate: 57600,
-    parser: SerialPort.parsers.readline('\n')
+    parser: serialport.parsers.readline('\n')
 });
+// pc debug
 // var port = new SerialPort('COM5', {
 //     autoOpen: false,
 //     baudRate: 57600,
