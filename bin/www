@@ -7,13 +7,13 @@
 var app = require('../app');
 var debug = require('debug')('node_fish:server');
 var http = require('http');
-
+var config = require('../config');
 /**
  * Get port from environment and store in Express.
  */
-var host = '192.168.1.114';
-app.set('host', host);
-var port = normalizePort(process.env.PORT || '3000');
+
+app.set('host', config.host);
+var port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
 console.log(host + ":" + port);
 /**
